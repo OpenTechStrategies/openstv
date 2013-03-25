@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: OpenSTV
+Version: 1.6.1
+Summary: Implements the single transferable vote, instant runoff voting, and several other voting systems.
+Home-page: http://www.openstv.org
+Author: Jeff O'Neill
+Author-email: jeff.oneill@openstv.org
+License: Gnu General Public License version 2
+Description: UNKNOWN
+Platform: UNKNOWN

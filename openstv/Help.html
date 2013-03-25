@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>OpenSTV Help</title>
+<meta name="version" content="$Id: Help.html 653 2009-10-31 16:46:23Z jeff.oneill $">
+</head>
+<body>
+
+<h2>OpenSTV Help</h2>
+
+<p><b>I. Overview</b></p>
+
+<p>The single transferable vote (STV) is an election method that is
+used to obtain proportional representation. STV is used for national
+elections in Ireland, Northern Ireland, Malta, Australia, Scotland,
+and New Zealand. In addition, many organizations use STV, including
+the Church of England and the Green Party of the United States.
+However, no two of the above use precisely the same definition of STV.
+With the same set of ballots, these different methods could produce
+different winners. STV can best be described as a category of
+election methods and users of STV must specify precisely which version
+of STV is to be used. The purpose of this software is to help
+organizations use STV and also to specify precisely which STV rules
+they will use.</p>
+
+<p>The basic structure of an STV method can be described as follows:</p>
+<ol>
+    <li> Establish the winning threshold.
+    <li> Count the first place votes.
+    <li> If one or more candidates have surplus votes (votes in excess
+         of the winning threshold), then transfer the surplus votes.
+         Otherwise, eliminate the last place candidate and transfer
+         those votes. The only candidates who can receive votes are
+         those who are under the winning threshold and not eliminated.
+         If there are no further candidates on a ballot than that vote
+         is "exhausted" and does not count towards any candidate.
+    <li> Repeat step (3) until all of the winners are determined.
+</ol>
+
+<p>Different STV methods define more precisely how the above is
+implemented. STV methods must define the winning threshold and also
+how votes are to be transferred from candidates with a surplus and
+from candidates who are eliminated. Specific implementations of STV
+define both of these and may also modify the basic structure.</p>
+
+<p>People have different points of view as to which STV method should
+be used in a particular situation. For a group that values
+simplicity, we recommend Scottish STV. It is the easiest method to
+understand and it provides accurate proportional representation.
+Another advantage is that OpenSTV's implementation of Scottish STV has
+been validated against the counting software used in Scotland.</p>
+
+<p>For a group that desires the most accurate proportional
+representation, we recommend Meek STV. The transfer of votes is more
+complicated with Meek STV, and thus more difficult to explain to the
+voters. Meek is, however, generally accepted as the most accurate STV
+method.</p>
+
+<p>The rest of this document assumes that you already chosen the
+particular STV method that you would like to use and guides the
+process of using OpenSTV. OpenSTV provides two basic operations:</p>
+
+<ol>
+<li> Running an election with a ballot file.
+<li> Creating or editing a ballot file that can later be used to run
+an election.
+</ol>
+
+<p><b>II. Running an Election</b></p>
+
+<p>To run an election, you must already have a complete ballot file.
+If you do not have a complete ballot file, then you can create or edit
+a ballot file as described below. To start the process, select "Run
+Election..." from the File menu.</p>
+
+<p>The first step is to select the file that contains the ballots and
+the election method to be used. You do not need to specify the format
+of the ballot file as OpenSTV will determine that automatically.</p>
+
+<p>The next window allows you to specify more information, optionally
+withdraw candidates, and to set options particular to the election
+method chosen (if any). This window should be self explanatory.</p>
+
+<p>The election results will appear in a new tab. You then have
+several options for saving the results. You can copy and paste the
+text into a different program, or using the File menu, you can save
+the results in one of three formats. The text format is exactly what
+you see on the screen. The html format can viewed in a browser. The
+CSV (comma separated value) output is used by the Electoral Reform
+Society and can be loaded into any spreadsheet program.</p>
+
+<p>The File menu also allows you to close the tabs containing election
+results; you can't close the console tab unless all results tabs have been 
+closed. The font size in any tab can be changed to the desired size  
+via the Options menu. If the election results are wider
+than the window size, then choosing a smaller font size may allow for
+easier viewing of election results.</p>
+
+<p><b>III. Editing Ballots</b></p>
+
+<p>OpenSTV has a built-in ballot file editor. If you would like to
+create a new ballot file from scratch, select "New Ballot File..."
+from the File menu. If you would like to edit an existing ballot
+file, select "Edit Ballot File..." from the File menu.</p>
+
+<p>When you create a new ballot file through OpenSTV, it will always
+be in the BLT format, and you cannot save the ballot file in any other
+format. The first step in creating a new ballot file is to enter
+the names of the candidates, and this process is self explanatory.
+Once you enter the candidates' names, you are presented with the
+editing window.</p>
+
+<p>If you are editing an existing file, then you can select ballot
+files in BLT format or in text format (described below), and OpenSTV
+will always save the file in the same format (you can't save in a
+different format). After selecting the ballot file to edit, you are
+presented with the editing window. You can have multiple ballot
+editing windows open at a time.</p>
+
+<p>The ballot editing window contains two tabs. The Ballots tab
+allows you to view and edit ballots, and this process should be
+self-explanatory. OpenSTV only accepts valid ballots, and an empty
+ballot is valid. You don't need to rank all of the candidates on each
+ballot, but you cannot skip rankings and you cannot give two or more
+candidates the same ranking. The Log tab creates an audit trail of
+how the ballots have been edited, and you can save the log to a file.</p>
+
+<p>The File menu allows you to save the ballots and the log or to
+save them under different filenames, but you can't change the file
+format. The File menu also allows you to append an existing ballot
+file to the ballot file you are currently editing. To append, the two
+ballot files must have the same number of candidates, the same number
+of seats, and identical candidate names.</p>
+
+<p><b>IV. Ballot File Formats</b></p>
+
+<p>Two ballot file formats are supported: BLT format and text format.</p>
+
+<p>The BLT format is preferred and is the format used by the Electoral Reform
+Society. Here is an example:</p>
+<pre>
+    4 2          # four candidates are competing for two seats
+    -2           # Bob has withdrawn (optional)
+    1 4 1 3 2 0  # first ballot
+    1 2 4 1 3 0
+    1 1 4 2 3 0  # The first number is the ballot weight (>= 1).
+    1 1 2 4 3 0  # The last 0 is an end of ballot marker.
+    1 1 4 3 0    # Numbers in between correspond to the candidates
+    1 3 2 4 1 0  # on the ballot.
+    1 3 4 1 2 0
+    1 3 4 1 2 0  # Chuck, Diane, Amy, Bob
+    1 4 3 2 0
+    1 2 3 4 1 0  # last ballot
+    0            # end of ballots marker
+    "Amy"        # candidate 1
+    "Bob"        # candidate 2
+    "Chuck"      # candidate 3
+    "Diane"      # candidate 4
+    "Gardening Club Election"  # title
+</pre>
+
+<p>The text format is a simple format that is easily created with any
+test editor. Here is an example:</p>
+<pre>
+    Amy Bob Chuck
+    Bob Amy
+    Chuck
+    Chuck Bob
+</pre>
+<p>The first ballot lists Amy first, Bob second, and Chuck third. Note
+that candidate names must be alphanumeric. You can also add a weight
+to a ballot by prefixing it with a number and a colon:</p>
+<pre>
+    10: Amy Bob Chuck
+    5: Bob Amy
+    Chuck
+    2: Chuck Bob
+</pre>
+
+<p><b>V. Advanced Use</b></p>
+<p>Download and install the Linux version of OpenSTV to use OpenSTV
+from the command line or via scripting.</p>
+<p>The <code>runelection.py</code> command runs an election for the
+given method and ballot file.  Results are printed to stdout.</p>
+<pre> runElection.py [-d] [-r report] [-t tiebreak] method ballotfile
+
+    -d: enable debug
+    -r: report format: text*, html, csv 
+    -t: tiebreak method: random*, alpha, index
+        *default
+</pre>
+
+<p>The <code>runelection.py</code> command runs an election for the
+given method and ballot file.  Results are printed to stdout. The
+following methods are available:</p>
+
+<blockquote>Approval<br>
+Borda<br>
+Bucklin<br>
+CambridgeSTV<br>
+Condorcet<br>
+Coombs<br>
+ERS97STV<br>
+FTSTV<br>
+GPCA2000STV<br>
+IRV<br>
+MeekQXSTV<br>
+MeekSTV<br>
+NIrelandSTV<br>
+QPQ<br>
+RTSTV<br>
+SNTV<br>
+ScottishSTV<br>
+SuppVote<br>
+WarrenQXSTV<br>
+WarrenSTV</blockquote>
+
+<p>You can also write your own Python scripts to run elections. To do
+this, you would import OpenSTV's Python modules into your own Python
+program. Use runElection.py as an example of how to write your own
+scripts using OpenSTV.</p>
+
+</body>
+</html>

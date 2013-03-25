@@ -1,0 +1,221 @@
+$Id: CHANGELOG.txt 722 2010-03-08 14:14:34Z jeff.oneill $
+
+OpenSTV 1.6
+- Provide YAML report for integration with DemoChoice
+- Added support for equal rankings and skipped rankings on ballots
+- Added support for ballot IDs
+- Restructuring of data structures for ballots
+- Reports are now done as plugins
+- Improvements to report generation including writing to file instead of memory
+- Counting methods are much faster with a large number of candidates
+- Check folder Plugins for external plugins
+- Reorganized package structure so that all imports use absolute paths
+- OpenSTV uses threads for counting and loading ballots so user doesn't see 
+  a frozen screen
+- Allow manual tie-breaking in OpenSTV
+
+OpenSTV 1.5
+- Improved format of election results
+- No limit on the number of candidates (previously was limited to 255
+candidates)
+- Election methods are now done as plugins so users can add their own
+methods (although only for advanced users at this point).
+- Cambridge STV can save the winner's ballots in files for determining
+replacements after a vacancy
+- Added statutes of some rules to the documentation
+- Added draft of New Zealand Meek (work in progress)
+- Added new method called QPQ
+- Comments now allowed in ballot files
+- Changes under the hood that make OpenSTV easier to maintain.
+
+OpenSTV 1.4
+- Fixed bug that broke Election Options dialog on mac
+- Fixed bug when navigating from empty ballot
+- Fixed bug in remembering working directory on mac
+
+OpenSTV 1.3
+- Rewrote OpenSTV user interface:
+(1) User can only run an election from a saved ballot file
+(previously, you could use a ballot file in memory).
+(2) User can edit/create ballots in a separate Ballot File Editor
+window and save them to a file.
+- Can save election results in HTML.
+- More explanatory output for Condorcet elections.
+- Added subclasses for different ballot types to make it easier to
+support new types.
+- Changes under the hood that make OpenSTV easier to maintain.
+
+OpenSTV 1.2
+- Changed output to be more descriptive and easier to read.
+- Changed implementation of SuppVote to use all rankings.
+- Changed implementation of IRV to stop sooner (won't change outcome).
+- Small change in reporting of the threshold for ERS97 (won't change outcome).
+- Print substages for ERS97.
+- Now possible to have unlimited precision (but max is set to 20 for gui).
+- Meek/Warren implemented in fixed point.
+
+OpenSTV 1.1
+- Added Scottish STV rules.
+- Added GPCA2000 rules.
+- Added approval voting.
+- Bug fixes in N. Ireland STV.
+- Simplified IRV.  Now always eliminates candidates one by one and
+stops when candidate has a majority (instead of stopping when 2
+candidates remain).
+- Show help files within OpenSTV instead of external browser because
+the external browser was not working with some platforms.
+- BCSTV, FTSTV, and Borda now implemented in fixed point instead of
+floating point.  Coombs, Meek, and Warren still in floating point.
+- Major code rewrite in STV.py.
+
+OpenSTV 1.0
+- Changed name to OpenSTV!
+- Test code now in a separate file and added more tests.
+- Although the tree-packed ballots greatly increased speed, they also
+greatly increased memory consumption.  The tree-data structure is now
+created dynamically as necessary rather than built completely.  This
+retains (and sometimes improves) the speed, and memory consumption is
+negligable.  Condorcet no longer uses trees.
+- Ballot data now based on bytes instead of ints which uses 1/4th less
+memory.  The number of candidates is now limited to 255.
+- Modifications to allow the use of psyco to speed up the code.  Psyco
+on average speeds up the code by a factor of 2-4 times.
+- Now properly raises and catches warnings and exceptions.
+- Fixed bug in Condorcet completion methods.
+- Changed code structure so that each method is a class rather than a 
+function.  This allows for cleaner code and better code reuse.
+- Fixed bugs with withdrawn candidates.  Withdrawn candidates are now
+excised from a copy of the ballots before the start of the election.  
+Since it is done with a copy, it can later be undone.
+- "raw" ballot format renamed as "text" format because raw also means
+unpacked ballots.
+
+pSTV 0.9
+Implemented the supplemental vote and N. Ireland STV.  Started Dail
+STV.  Can shuffle the ballots (interesting for Cambridge STV and
+random transfer STV).  Simplified the rounding of floats to make the
+code cleaner.  Implemented tree-packed ballots.  Used tree-packed
+ballots with Meek, Warren, and Condorcet, greatly speeding up the
+implementations of these methods.  Faster implementation of Bucklin
+and Coombs.  For the curious, here are the timing statistics, in
+seconds, as they have changed over time on a test of data from eight
+real elections:
+     SNTV:         0.6
+     IRV:          7.1 ->  1.2
+     BCSTV:        4.6
+     Coombs:      68.6 -> 40.4 -> 24.8
+     Cambridge:    3.7 ->  2.0
+     ERS97:        6.4 ->  5.5
+     Meek:        48.3 -> 38.7 ->  5.9
+     Warren:      38.0 -> 30.7 ->  3.0
+     Bucklin:      9.4 ->  3.6
+     Borda:        2.3
+     Condorcet:  106.0 -> 13.3 ->  7.7
+
+
+pSTV 0.8
+Added tabbed windows for comparing multiple election results.  The
+font size can be changed for each tab separately.  The display
+precision is now chosen in the Election menu and can only be changed
+by rerunning the election.  The ERS97 implementation is finally in
+fixed point and the desired precision can be specified (for future
+implementation of ERS97-like rules such as Malta STV).  Can now
+eliminate candidates before running an election.  Previously, when
+loading a BLT file, eliminated candidates were removed from the
+ballots.  Now, the eliminated candidates are noted but they remain on
+the ballots.  This works better with allowing the user to selectively
+eliminate candidates, and the user can override the eliminated
+candidates specified in the BLT file.  Added more comments and did
+some random code cleanups.
+
+pSTV 0.7
+Renamed Simple STV as British Columbia STV.  Fixed several UI bugs for
+Mac.  Made comparisons of floating point numbers safer.  Added timing
+to tests.  Made IRV much faster.  IRV eliminates all losers
+simultaneously.  Fixed bug in Bucklin.  Fixed bug in Coombs.  Changed
+internal ballot format: got rid of Blist and append ballots
+immediately.  Revamped ballot entry to make it easier to use.  Show
+brief description of method after it is selected.  Added symmetric
+completion of ballots option for Borda.
+
+pSTV 0.6
+Condorcet completion methods include Borda, IRV, and SSD.  Changed
+Methods menu to have an option to show only STV methods. Added
+Bucklin.
+
+pSTV 0.5.2
+Added Condorcet SSD.
+
+pSTV 0.5.1
+The primary reason for this release is to change DAT files to BLT
+files.  I've also added Borda count and Coombs methods.
+
+pSTV 0.5
+Now uses innosetup to create a windows installer.  Also has options to
+create desktop/quicklaunch icons and associate dat files with pSTV
+(with an icon).  Reverted back to previous ERS CSV format (Brian
+abandoned V6).  sql output conforms to spec.  DAT files now loaded
+faster than before.  When reading DAT files will handle multiple
+rankings of a candidate.  Should now work properly even with very few
+candidates or voters.  Will return with fewer winners than asked for
+if not enough candidates receive more than 0 votes.  pSTV *should*
+never crash.
+
+pSTV 0.4.2
+Can now append DAT files.  Now continues gracefully when loading a
+ballot file with a bad format.  Raw ballot files can now accept a
+weight.  Added an edit menu with a copy command.  Updated ERSCSV
+files to V6 and can now use this format for any method (previously
+it could only be used for ERS97 rules).  Changed -m ers to produce
+a table to be used with SQL and to work with methods other than
+ERS97 STV.  These last two changes do not conform precisely to specs
+and will need to be tweaked.
+
+pSTV 0.4.1
+Added substage tiebreaking for ERS97 rules.
+
+pSTV 0.4
+Previous implementation of Meek STV was actually Warren STV.  Now Meek
+is correctly implemented and Warren has been added.  Added an icon.
+Clarified file formats in saving and loading ballots.  Changed how
+output is handled (though invisible to user): STV.py now prints to
+stdout and pSTV.py captures this stream.  Can now save output in ERS
+style result sheet.
+
+pSTV 0.3
+Formal release with Cambridge rules.
+Fixed little bugs in reading dat files.
+
+pSTV 0.2.5
+Removed spurious tie break messages when choosing winners for ERS97.
+
+pSTV 0.2.4
+Added exclusion of candidates in reading dat files.
+
+pSTV 0.2.3
+Fixed little bugs in reading dat files.
+
+pSTV 0.2.2
+Implemented Cambridge, MA rules.  Results are identical to CC2003,
+SC2003, CC2001, SC2001, and CC1999 elections.  Fixed nasty floating
+point bug that caused an error with ERS97 tests performed by Brian
+Wichmann.  Comparison (>=) wasn't accurate because of difference at
+around 1e-14.
+
+pSTV 0.2.1
+Several bug fixes for bugs found by Brian Wichmann when verifying
+ERS97 implementation.
+
+pSTV 0.2
+Many, many changes from the previous version.  Highlights: fixed bug
+in tiebreaking, ERS97 fully implemented and tested, dynamic and
+fractional thresholds for RT and FT STV, all menu items now work,
+thorough testing, added Simple STV rules.
+
+pSTV 0.1
+Initial Release.  Methods implemented are SNTV, IRV, Random Transfer
+STV, Fractional Transfer STV, and Meek STV.  Allows for different
+thresholds and delayed transfer of surplus.  Ballots can be loaded
+from a file or entered via the program.  The interface needs work and
+some features, such as printing, are not implemented.  Probably many,
+many bugs that need to be found and fixed.

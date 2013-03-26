@@ -1,4 +1,10 @@
-$Id: CHANGELOG.txt 722 2010-03-08 14:14:34Z jeff.oneill $
+$Id: CHANGELOG.txt 822 2010-11-21 05:25:43Z jeff.oneill $
+
+OpenSTV 1.7 
+- Added SanFranciscoRCV method 
+- Added support for cleaning of ballots as done in San Francisco
+(before was only Cambridge cleaning)
+- Relaxed minimum requirements for number of candidates and ballots
 
 OpenSTV 1.6
 - Provide YAML report for integration with DemoChoice

@@ -1,0 +1,11 @@
+
+include CHANGELOG.txt
+include README.txt
+include openstv/Help.html
+include openstv/License.html
+include openstv/Icons/splash.png
+include openstv/Icons/blt.ico
+include openstv/Icons/pie.ico
+include openstv/Icons/blt.icns
+include openstv/Icons/pie.icns
+

@@ -3,7 +3,7 @@ OpenSTV: Introduction & Historical Notes
 
 This is OpenSTV 1.7.  OpenSTV is open source voting software that implements the single transferable vote (STV) election method.
 
-OpenSTV was released under the GNU General Public License until around mid-2011, after which its main author, Jeff O'Neill, took future versions proprietary.  As of this writing, the latest version along the proprietary line is 2.1.0 and it is available for purchase from http://www.openstv.org/.  It looks like O'Neill also offers an online web app at http://www.opavote.org/, in case you don't want to set up OpenSTV 2.x yourself.
+OpenSTV was released under the GNU General Public License version 2 (or later) until around mid-2011.  At that point its main author, Jeff O'Neill, took future versions proprietary.  As of this writing, the latest version along the proprietary line is 2.1.0 and it is available for purchase from http://www.openstv.org/.  It looks like O'Neill also offers an online web app at http://www.opavote.org/, in case you don't want to set up OpenSTV 2.x yourself.
 
 The last open source version of OpenSTV he released was 1.7, which is available here.  If this were ever to become the root of a new open source development line, good manners would dictate that we change the name to something other than "OpenSTV" (unless O'Neill prefers it stay the same).  However, that's not an issue at this point, as what's here is exactly what was released as "OpenSTV 1.7" back in 2011.
 

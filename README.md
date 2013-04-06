@@ -7,11 +7,12 @@ OpenSTV was released under the GNU General Public License version 2 (or later) u
 
 The last open source version of OpenSTV he released was 1.7, which is available here.  If this were ever to become the root of a new open source development line, good manners would dictate that we change the name to something other than "OpenSTV" (unless O'Neill prefers it stay the same).  However, that's not an issue at this point, as what's here is exactly what was released as "OpenSTV 1.7" back in 2011.
 
-For more information about OpenSTV's history, and the temporary disappearance of the 1.7 source code from the Internet, see:
+For more information about OpenSTV's history, the temporary disappearance of the 1.7 source code from the public Internet, and its eventual restoration, see:
 
   * http://groups.google.com/group/openstv-announce/browse_frm/month/2011-06?pli=1
   * http://meta.stackoverflow.com/questions/125579/downloading-openstv-doesnt-work
   * http://meta.stackoverflow.com/questions/78203/is-it-legal-for-stack-overflow-to-redistribute-openstv-binaries
+  * https://github.com/OpenTechStrategies/openstv/commit/32df12393eae3f1ce8c00ac99d07e4045a3fbda6
 
 Below is the original README.txt from Jeff O'Neill (just reformatted to Markdown for consistency with the rest of this file):
 

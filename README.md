@@ -9,6 +9,7 @@ at the very least, no one is maintaining the versions here or in the Conservator
 
 If you're looking for voting software, as of May 2016 the places to start are probably:
 
+* Agora Voting: https://github.com/agoravoting
 * Helios Voting: https://vote.heliosvoting.org/
 * Condorcet Internet Voting Service: http://civs.cs.cornell.edu/
 * Apache STeVe (https://steve.apache.org/)
@@ -16,15 +17,7 @@ If you're looking for voting software, as of May 2016 the places to start are pr
 * https://github.com/mdipierro/evote
 * https://github.com/Conservatory/openstv (including here so you have a complete list)
 
-One of the first three is probably your best bet. 
-Helios is open source, but, alas, that is not by itself evidence that it is the best UI/UX or best implementation of the algorithm, etc, of course.
-
-Apache STeVe was used in a test Board election at the Apache Software Foundation. 
-The user interface is pretty good, and it supports the "Single Transferable Vote" method as well as some others. 
-(Oddly, it seems not to have direct support for Approval Voting, but that ought to be very easy to add if someone wants it, since implementation-wise it's really a subset of the STV algorithm anyway.)
-
-As for voting method: for most purposes, Score Voting, Approval Voting, or STV are probably fine. 
-If you want more resources, this tweet (a discussion with some people about the advantages of Score Voting) is a good starting point: https://twitter.com/kfogel/status/705857077768376320. 
+One of the first 4 is probably your best bet. 
 
 Choice of voting system is a complex question, and the right choice depends on what kinds of outcomes you're going for.
 

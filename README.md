@@ -14,6 +14,14 @@ For more information about OpenSTV's history, the temporary disappearance of the
   * http://meta.stackoverflow.com/questions/78203/is-it-legal-for-stack-overflow-to-redistribute-openstv-binaries
   * https://github.com/OpenTechStrategies/openstv/commit/32df12393eae3f1ce8c00ac99d07e4045a3fbda6
 
+Some other open source voting software systems are:
+
+* Helios Voting (https://vote.heliosvoting.org/)
+* Condorcet Internet Voting Service (http://civs.cs.cornell.edu/)
+* Apache STeVe (https://steve.apache.org/)
+* https://github.com/conservancy/voting (lists a bunch of other software too)
+* https://github.com/mdipierro/evote
+
 Below is the original README.txt from Jeff O'Neill (just reformatted to Markdown for consistency with the rest of this file):
 
 Original README.txt from OpenSTV 1.7

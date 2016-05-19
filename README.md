@@ -3,6 +3,34 @@ OpenSTV: Introduction & Historical Notes
 
 This is OpenSTV 1.7.  OpenSTV is open source voting software that implements the single transferable vote (STV) election method.
 
+The canonical home for this archived version of OpenSTV is actually https://github.com/Conservatory/openstv/ (however, that tree is the same as the one here.) 
+The software is not being maintained; 
+at the very least, no one is maintaining the versions here or in the Conservatory. 
+
+If you're looking for voting software, as of May 2016 the places to start are probably:
+
+* Helios Voting: https://vote.heliosvoting.org/
+* Condorcet Internet Voting Service: http://civs.cs.cornell.edu/
+* Apache STeVe (https://steve.apache.org/)
+* https://github.com/conservancy/voting (lists a bunch of other software too)
+* https://github.com/mdipierro/evote
+* https://github.com/Conservatory/openstv (including here so you have a complete list)
+
+One of the first three is probably your best bet. 
+Helios is open source, but, alas, that is not by itself evidence that it is the best UI/UX or best implementation of the algorithm, etc, of course.
+
+Apache STeVe was used in a test Board election at the Apache Software Foundation. 
+The user interface is pretty good, and it supports the "Single Transferable Vote" method as well as some others. 
+(Oddly, it seems not to have direct support for Approval Voting, but that ought to be very easy to add if someone wants it, since implementation-wise it's really a subset of the STV algorithm anyway.)
+
+As for voting method: for most purposes, Score Voting, Approval Voting, or STV are probably fine. 
+If you want more resources, this tweet (a discussion with some people about the advantages of Score Voting) is a good starting point: https://twitter.com/kfogel/status/705857077768376320. 
+
+Choice of voting system is a complex question, and the right choice depends on what kinds of outcomes you're going for.
+
+OpenSTV History
+---------------
+
 OpenSTV was released under the GNU General Public License version 2 (or later) until around mid-2011.  At that point its main author, Jeff O'Neill, took future versions proprietary.  As of this writing, the latest version along the proprietary line is 2.1.0 and it is available for purchase from http://www.openstv.org/.  It looks like O'Neill also offers an online web app at http://www.opavote.org/, in case you don't want to set up OpenSTV 2.x yourself.
 
 The last open source version of OpenSTV he released was 1.7, which is available here.  If this were ever to become the root of a new open source development line, good manners would dictate that we change the name to something other than "OpenSTV" (unless O'Neill prefers it stay the same).  However, that's not an issue at this point, as what's here is exactly what was released as "OpenSTV 1.7" back in 2011.

@@ -17,7 +17,7 @@ start are probably:
 * Agora Voting: https://github.com/agoravoting
 * Helios Voting: https://vote.heliosvoting.org/
 * Condorcet Internet Voting Service: http://civs.cs.cornell.edu/
-* Apache STeVe (https://steve.apache.org/)
+* Apache STeVe: https://steve.apache.org/
 * E-Vote: https://github.com/mdipierro/evote
 * https://github.com/conservancy/voting (lists a bunch of other voting software)
 * https://github.com/Conservatory/openstv (including here so you have a complete list)
